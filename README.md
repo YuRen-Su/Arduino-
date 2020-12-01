@@ -79,3 +79,21 @@ void loop() {
 }
 </pre>
 ##  Topic Five - One Button + Relay Switch
+
+```C++
+void setup() {
+  pinMode(2,OUTPUT);
+  pinMode(13,OUTPUT);
+  for (int i=3 ;i<5;i++){
+    pinMode(i,INPUT);
+  }  
+}
+
+void loop() {
+  while (digitalRead(3) == 0) {
+     while (digitalRead(3) == 0) ;
+     digitalWrite(2,!digitalRead(2));
+  }
+  delay(20);
+}
+```
