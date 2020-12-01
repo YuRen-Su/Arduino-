@@ -1,0 +1,23 @@
+void setup() {
+  pinMode(2,OUTPUT);
+  pinMode(13,OUTPUT);
+  for (int i=3 ;i<5;i++){
+    pinMode(i,INPUT);
+  }  
+}
+
+void loop() {
+  while (digitalRead(3) == 0) {
+     while (digitalRead(3) == 0) {
+       delay(30);
+     }
+     digitalWrite(2,HIGH);
+  }
+  while (digitalRead(4) == 0) {
+     while (digitalRead(4) == 0) {
+       delay(30);
+     }
+     digitalWrite(2,LOW);
+  }
+  delay(20);
+}
