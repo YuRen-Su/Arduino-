@@ -1,7 +1,8 @@
 # Arduino-Classroom-learning-content
 ## Topic One - LED blinking
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20blink%20GIF.gif)
-<pre style="word-wrap: break-word; white-space: pre-wrap;">void setup() {
+```C++
+void setup() {
   // put your setup code here, to run once:
    pinMode(2,OUTPUT);
 }
@@ -13,10 +14,11 @@ void loop() {
   digitalWrite(2,LOW);
   delay(200);
 }
-</pre>
+```
 ##  Topic Two - LED turn on and off one by one from left to right
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20turn%20on%20and%20off%20one%20by%20one%20from%20left%20to%20right%20%20GIF.gif)
-<pre style="word-wrap: break-word; white-space: pre-wrap;">int LED=5;
+```C++
+int LED=5;
 void setup() {
   for (int i=2 ;i&lt;6;i++){
     pinMode(i,OUTPUT);
@@ -35,10 +37,11 @@ void loop() {
     LED--;
  delay(500);
 }
-</pre>
+```
 ##  Topic Three - LED breathing light
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20breathing%20light%20GIF.gif)
-<pre style="word-wrap: break-word; white-space: pre-wrap;">int value=255; int x=-15;
+```C++
+int value=255; int x=-15;
 void setup() {
   // put your setup code here, to run once:
 pinMode(3,OUTPUT);
@@ -51,10 +54,11 @@ analogWrite(3,value);
 delay(80);
 value=value-x;
 }
-</pre>
+```
 ##  Topic Four - Two Button + Relay Switch
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Button%20%2B%20Relay%20Switch%20GIF.gif)
-<pre style="word-wrap: break-word; white-space: pre-wrap;">void setup() {
+```C++
+void setup() {
   pinMode(2,OUTPUT);
   pinMode(13,OUTPUT);
   for (int i=3 ;i&lt;5;i++){
@@ -77,9 +81,9 @@ void loop() {
   }
   delay(20);
 }
-</pre>
+```
 ##  Topic Five - One Button + Relay Switch
-
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/One%20Button%20%2B%20Relay%20Switch%20GIF.gif)
 ```C++
 void setup() {
   pinMode(2,OUTPUT);
