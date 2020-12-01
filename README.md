@@ -13,3 +13,25 @@
 <span class="pl-c1">digitalWrite</span>(<span class="pl-c1">2</span>,LOW);<span class="pl-c"><span class="pl-c">//</span>亮</span>
  <span class="pl-c1">delay</span>(<span class="pl-c1">200</span>);
 ｝</pre>
+## LED turn on and off one by one from left to right
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20turn%20on%20and%20off%20one%20by%20one%20from%20left%20to%20right%20GIF.gif)
+<pre style="word-wrap: break-word; white-space: pre-wrap;">int LED=5;
+void setup() {
+  for (int i=2 ;i&lt;6;i++){
+    pinMode(i,OUTPUT);
+  }
+}
+
+void loop() {
+  for(int i=5; i&gt;1; i--)
+    digitalWrite(i,HIGH);
+    if (LED&gt;=2){
+      digitalWrite(LED,LOW);
+    }
+    else{
+      LED=6;
+    }   
+    LED--;
+ delay(500);
+}
+</pre>
