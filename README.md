@@ -3,12 +3,10 @@
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20blink%20GIF.gif)
 ```C++
 void setup() {
-  // put your setup code here, to run once:
    pinMode(2,OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   digitalWrite(2,HIGH);
   delay(200);
   digitalWrite(2,LOW);
@@ -43,16 +41,14 @@ void loop() {
 ```C++
 int value=255; int x=-15;
 void setup() {
-  // put your setup code here, to run once:
-pinMode(3,OUTPUT);
+  pinMode(3,OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-if (value&lt;=0 || value&gt;=255) x=-x;
-analogWrite(3,value);
-delay(80);
-value=value-x;
+  if (value&lt;=0 || value&gt;=255) x=-x;
+  analogWrite(3,value);
+  delay(80);
+  value=value-x;
 }
 ```
 ##  Topic Four - Two Button + Relay Switch
