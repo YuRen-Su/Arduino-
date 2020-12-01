@@ -52,3 +52,29 @@ delay(80);
 value=value-x;
 }
 </pre>
+##  Topic Four - LED breathing light
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Button%20%2B%20Relay%20Switch%20GIF.gif)
+<pre style="word-wrap: break-word; white-space: pre-wrap;">void setup() {
+  pinMode(2,OUTPUT);
+  pinMode(13,OUTPUT);
+  for (int i=3 ;i&lt;5;i++){
+    pinMode(i,INPUT);
+  }  
+}
+
+void loop() {
+  while (digitalRead(3) == 0) {
+     while (digitalRead(3) == 0) {
+       delay(30);
+     }
+     digitalWrite(2,HIGH);
+  }
+  while (digitalRead(4) == 0) {
+     while (digitalRead(4) == 0) {
+       delay(30);
+     }
+     digitalWrite(2,LOW);
+  }
+  delay(20);
+}
+</pre>
