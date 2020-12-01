@@ -1,18 +1,19 @@
 # Arduino-Classroom-learning-content
 ## Topic One - LED blinking
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20blink%20GIF.gif)
-<pre><span class="pl-k">void</span> <span class="pl-en">setup</span>() {
-  <span class="pl-c"><span class="pl-c">//</span> put your setup code here, to run once:</span>
-   <span class="pl-c1">pinMode</span>(<span class="pl-c1">2</span>,OUTPUT);
+<pre style="word-wrap: break-word; white-space: pre-wrap;">void setup() {
+  // put your setup code here, to run once:
+   pinMode(2,OUTPUT);
 }
 
-<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
-  <span class="pl-c"><span class="pl-c">//</span> put your main code here, to run repeatedly:</span>
- <span class="pl-c1">digitalWrite</span>(<span class="pl-c1">2</span>,HIGH);<span class="pl-c"><span class="pl-c">//</span>滅</span>
- <span class="pl-c1">delay</span>(<span class="pl-c1">200</span>);
-<span class="pl-c1">digitalWrite</span>(<span class="pl-c1">2</span>,LOW);<span class="pl-c"><span class="pl-c">//</span>亮</span>
- <span class="pl-c1">delay</span>(<span class="pl-c1">200</span>);
-｝</pre>
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(2,HIGH);
+  delay(200);
+  digitalWrite(2,LOW);
+  delay(200);
+}
+</pre>
 ##  Topic Two - LED turn on and off one by one from left to right
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20turn%20on%20and%20off%20one%20by%20one%20from%20left%20to%20right%20GIF.gif)
 <pre style="word-wrap: break-word; white-space: pre-wrap;">int LED=5;
