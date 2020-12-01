@@ -97,3 +97,31 @@ void loop() {
   delay(20);
 }
 ```
+##  Topic Six - Servo Motor Speed Control
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Servo%20motor%20speed%20control%20GIF.gif)
+```C++
+#include <Servo.h>
+Servo myservo;
+int data= 0 ;
+void setup() {
+ myservo.attach(7);
+for (int i=2 ;i<6;i++){
+    pinMode(i,INPUT);
+    myservo.write(0);
+  } 
+}
+
+void loop() {
+    while (digitalRead(2) == 0) {
+      while (digitalRead(2) == 0) ;
+      
+      if (data>180) {
+        data = 0;
+      }
+      else{
+        data+=30;
+      }
+      myservo.write(data);
+    }
+}
+```
