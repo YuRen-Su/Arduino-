@@ -35,3 +35,19 @@ void loop() {
  delay(500);
 }
 </pre>
+## LED breathing light
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20breathing%20light%20GIF.gif)
+<pre style="word-wrap: break-word; white-space: pre-wrap;">int value=255; int x=-15;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(3,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+if (value&lt;=0 || value&gt;=255) x=-x;
+analogWrite(3,value);
+delay(80);
+value=value-x;
+}
+</pre>
