@@ -15,7 +15,7 @@ void loop() {
 }
 </pre>
 ##  Topic Two - LED turn on and off one by one from left to right
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20turn%20on%20and%20off%20one%20by%20one%20from%20left%20to%20right%20GIF.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20turn%20on%20and%20off%20one%20by%20one%20from%20left%20to%20right%20%20GIF.gif)
 <pre style="word-wrap: break-word; white-space: pre-wrap;">int LED=5;
 void setup() {
   for (int i=2 ;i&lt;6;i++){
