@@ -201,3 +201,83 @@ void br(){
   analogWrite(10,HIGH);
 }
 ```
+##  Topic Nine - Motor PWM Button Control + LED +ON/OFF Button
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20GIF.gif)
+```C++
+int i=110;
+int z=8;
+bool b = false;
+void setup() {
+  pinMode(2,OUTPUT);//IN3
+  pinMode(5,OUTPUT);//IN1
+  pinMode(6,OUTPUT);//IN2
+  pinMode(3,INPUT);
+  pinMode(4,INPUT);
+  digitalWrite(2,LOW);
+    for(int i=7;i<13;i++){
+    pinMode(i,OUTPUT);
+  }
+  for(int i=7;i<13;i++){
+    digitalWrite(i,HIGH);
+  }
+  Serial.begin(9600);
+}
+
+void loop() {
+  while (digitalRead(4) == 0) {
+      while (digitalRead(4) == 0) ;
+      delay(40);
+      b=!b;
+  }
+  if (b==false){
+    fr(0);
+    led(7);
+    i=110;
+    z=8;
+  }
+  else{
+    lo();
+  }
+  delay(50);
+}
+
+void lo() {
+  while (digitalRead(3) == 0) {
+      while (digitalRead(3) == 0) ;
+      delay(50);
+      if (i==255){
+        i=110;
+        z=8;
+      }
+      else
+      {
+        i+=29;
+        z++;
+      }
+  }
+  led(z);
+  fr(i);
+}
+
+void fr(int f){
+  analogWrite(5,f);
+  analogWrite(6,LOW);
+}
+void rev (int r){
+  analogWrite(5,LOW);
+  analogWrite(6,r);
+}
+void br(){
+  analogWrite(5,HIGH);
+  analogWrite(6,HIGH);
+}
+
+void led(int l){
+  for(int i=7;i<13;i++){
+    digitalWrite(i,HIGH);
+  }
+  for(int i=7;i<l;i++){
+    digitalWrite(i,LOW);
+  }
+}
+```
