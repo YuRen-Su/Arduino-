@@ -126,7 +126,7 @@ void loop() {
 }
 ```
 ##  Topic Seven - Motor PWM Control
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Servo%20motor%20speed%20control%20GIF.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Control%20GIF.gif)
 ```C++
 void setup() {
   pinMode(2,OUTPUT);//IN3
