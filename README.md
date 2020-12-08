@@ -202,7 +202,7 @@ void br(){
 }
 ```
 ##  Topic Nine - Motor PWM Button Control + LED +ON/OFF Button
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20GIF.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20%2B%20LED%20%2BONOFF%20Button%20GIF.gif)
 ```C++
 int i=110;
 int z=8;
