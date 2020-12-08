@@ -161,7 +161,7 @@ void br(){
 }
 ```
 ##  Topic Eight - Motor PWM Button Control
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Control%20GIF.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20GIF.gif)
 ```C++
 int i=110;
 void setup() {
