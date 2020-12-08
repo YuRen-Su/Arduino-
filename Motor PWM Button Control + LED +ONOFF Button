@@ -57,14 +57,6 @@ void fr(int f){
   analogWrite(5,f);
   analogWrite(6,LOW);
 }
-void rev (int r){
-  analogWrite(5,LOW);
-  analogWrite(6,r);
-}
-void br(){
-  analogWrite(5,HIGH);
-  analogWrite(6,HIGH);
-}
 
 void led(int l){
   for(int i=7;i<13;i++){
