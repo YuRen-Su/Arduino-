@@ -125,3 +125,38 @@ void loop() {
     }
 }
 ```
+##  Topic Seven - Motor PWM Control
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Servo%20motor%20speed%20control%20GIF.gif)
+```C++
+void setup() {
+  pinMode(2,OUTPUT);//IN3
+  pinMode(9,OUTPUT);//IN1
+  pinMode(10,OUTPUT);//IN2
+  digitalWrite(2,LOW);
+}
+
+void loop() {
+  fr(200);
+  delay(2000);
+  br();
+  delay(2000);
+  rev(200);
+  delay(2000);
+  br();
+  delay(2000);
+  
+}
+
+void fr(int f){
+  analogWrite(9,f);
+  analogWrite(10,LOW);
+}
+void rev (int r){
+  analogWrite(9,LOW);
+  analogWrite(10,r);
+}
+void br(){
+  analogWrite(9,HIGH);
+  analogWrite(10,HIGH);
+}
+```
