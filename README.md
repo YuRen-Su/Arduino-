@@ -274,7 +274,7 @@ void led(int l){
 }
 ```
 ##  Topic Ten - LiquidCrystal Library - Hello World
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20%2B%20LED%20%2BONOFF%20Button%20GIF.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LiquidCrystal%20Library%20-%20Hello%20World%20GIF.gif)
 ```c++
 /*
    The circuit:
@@ -307,7 +307,7 @@ void loop() {
 }
 ```
 ##  Topic Eleven - LCD Display Basic Personal Information
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20%2B%20LED%20%2BONOFF%20Button%20GIF.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LCD%20display%20personal%20information%20GIF.jpg)
 ```C++
 #include <LiquidCrystal.h>
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
