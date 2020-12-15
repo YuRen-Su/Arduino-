@@ -306,7 +306,7 @@ void loop() {
   lcd.print(millis() / 1000);
 }
 ```
-##  Topic Eleven - LCD Display Basic Personal Information
+##  Topic Twelve - LCD Display Basic Personal Information
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LCD%20display%20personal%20information%20GIF.jpg)
 ```C++
 #include <LiquidCrystal.h>
@@ -320,8 +320,8 @@ void setup() {
   lcd.print("25 I3A");
 }
 ```
-##  Topic Eleven - LCD Display Basic Personal Information
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LCD%20display%20personal%20information%20GIF.jpg)
+##  Topic Eleven - Button scroll LCD text
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Button%20scroll%20LCD%20text%20GIF.gif)
 ```C++
 #include <LiquidCrystal.h>
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
