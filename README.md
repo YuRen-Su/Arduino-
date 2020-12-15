@@ -320,3 +320,71 @@ void setup() {
   lcd.print("25 I3A");
 }
 ```
+##  Topic Eleven - LCD Display Basic Personal Information
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LCD%20display%20personal%20information%20GIF.jpg)
+```C++
+#include <LiquidCrystal.h>
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+String LCD[]{"A","B","C","D"};
+
+int tmp=0,tmpd=1;
+bool b=false;
+
+void setup() {
+  pinMode(7,INPUT);
+  pinMode(6,INPUT);
+  lcd.begin(16, 2);
+  lcd.print("Welcome!!"); 
+}
+
+void loop() {
+    
+   if (digitalRead(7) == 0) {
+      while (digitalRead(7) == 0)
+      delay(20);
+      if(b==true){
+        tmp++;
+        tmpd++;
+        lcd.clear();
+        if (tmp>=4){
+          tmp=0;
+        }
+        if (tmpd>=4){
+          tmpd=0;
+        }
+      }
+      if(b==false){
+        b=!b;
+        lcd.clear();
+      }
+  }
+   if (digitalRead(6) == 0) {
+      while (digitalRead(6) == 0){
+        delay(100);
+      }
+      if(b==true){
+        tmp--;
+        tmpd--;
+        lcd.clear();
+        if (tmp<=-1){
+          tmp=3;
+        }
+        if (tmpd<=-1){
+          tmpd=3;
+        }
+      }
+      if(b==false){
+        b=!b;
+        lcd.clear();
+      }
+  }
+   if(b==true){
+      
+      lcd.setCursor(0, 0);
+      lcd.print(LCD[tmp]);
+      lcd.setCursor(0, 1);
+      lcd.print(LCD[tmpd]);
+   }
+}
+```
