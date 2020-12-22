@@ -1,7 +1,7 @@
 # Arduino-Classroom-learning-content
 ## Topic One - LED blinking
 ### 功能-LED閃爍 0.2S亮 0.2S滅
-＊電路圖＆功能如下：
+#### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20blink%20GIF.gif)
 ```C++
 void setup() {
