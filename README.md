@@ -181,7 +181,7 @@ void br(){
 }
 ```
 ##  Topic Eight - Motor PWM Button Control
-### 使用按鈕控制PWM來控制風扇轉速
+### 功能-使用按鈕控制PWM來控制風扇轉速
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20GIF.gif)
 ```C++
@@ -224,7 +224,7 @@ void br(){
 }
 ```
 ##  Topic Nine - Motor PWM Button Control + LED +ON/OFF Button
-### 模擬一般市售直流風扇之功能
+### 功能-模擬一般市售直流風扇之功能
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20%2B%20LED%20%2BONOFF%20Button%20GIF.gif)
 ```C++
