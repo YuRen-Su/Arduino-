@@ -64,7 +64,7 @@ void loop() {
 }
 ```
 ##  Topic Four - Two Button + Relay Switch
-### 功能-用雙按鈕控制繼電器讓LED亮滅
+### 功能-用雙按鈕控制繼電器讓LED亮滅 💡
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Button%20%2B%20Relay%20Switch%20GIF.gif)
 ```C++
@@ -93,7 +93,7 @@ void loop() {
 }
 ```
 ##  Topic Five - One Button + Relay Switch
-### 功能-單顆按鈕透過繼電器控制LED亮滅
+### 功能-單顆按鈕透過繼電器控制LED亮滅 💡
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/One%20Button%20%2B%20Relay%20Switch%20GIF.gif)
 ```C++
@@ -114,7 +114,7 @@ void loop() {
 }
 ```
 ##  Topic Six - Servo Motor Speed Control
-### 功能-透過按鈕控制伺服馬達轉速
+### 功能-透過按鈕控制伺服馬達轉速 🌪
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Servo%20motor%20speed%20control%20GIF.gif)
 ```C++
@@ -144,7 +144,7 @@ void loop() {
 }
 ```
 ##  Topic Seven - Motor PWM Control
-### 功能-使用Arduino控制HT6751 IC發出PWM控制風扇轉速
+### 功能-使用Arduino控制HT6751 IC發出PWM控制風扇轉速⚡⚡
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Control%20GIF.gif)
 ```C++
@@ -181,7 +181,7 @@ void br(){
 }
 ```
 ##  Topic Eight - Motor PWM Button Control
-### 功能-使用按鈕控制PWM來控制風扇轉速
+### 功能-使用按鈕控制PWM來控制風扇轉速⚡⚡
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20GIF.gif)
 ```C++
@@ -224,7 +224,7 @@ void br(){
 }
 ```
 ##  Topic Nine - Motor PWM Button Control + LED +ON/OFF Button
-### 功能-模擬一般市售直流風扇之功能
+### 功能-模擬一般市售直流風扇之功能🌬
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Motor%20PWM%20Button%20Control%20%2B%20LED%20%2BONOFF%20Button%20GIF.gif)
 ```C++
@@ -298,7 +298,7 @@ void led(int l){
 }
 ```
 ##  Topic Ten - LiquidCrystal Library - Hello World
-### 功能-使用LCD顯示出"Hello World"字樣與正數計時
+### 功能-使用LCD顯示出"Hello World"字樣與正數計時🖥🕜
 ### ☆使用LiquidCrystal Library程式庫
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LiquidCrystal%20Library%20-%20Hello%20World%20GIF.gif)
@@ -334,7 +334,7 @@ void loop() {
 }
 ```
 ##  Topic Eleven - LCD Display Basic Personal Information
-### 功能-使用LCD顯示出班級＆座號＆姓名
+### 功能-使用LCD顯示出班級＆座號＆姓名📄
 ### ☆使用LiquidCrystal Library程式庫
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LCD%20display%20personal%20information%20GIF.jpg)
@@ -351,7 +351,7 @@ void setup() {
 }
 ```
 ##  Topic Twelve - Button scroll LCD text
-### 功能-使用LCD顯示可捲動的英文字母清單
+### 功能-使用LCD顯示可捲動的英文字母清單📃
 ### ☆使用LiquidCrystal Library程式庫
 #### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Button%20scroll%20LCD%20text%20GIF.gif)
