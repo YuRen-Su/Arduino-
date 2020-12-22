@@ -16,6 +16,13 @@ void loop() {
 }
 ```
 ##  Topic Two - LED turn on and off one by one from left to right
+### 功能-LED由左至右逐一亮滅
+### 初始狀態○○○○
+### STEP1 ●○○○
+### STEP2 ○●○○
+### STEP3 ○○●○
+### STEP4 ○○○●
+#### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20turn%20on%20and%20off%20one%20by%20one%20from%20left%20to%20right%20%20GIF.gif)
 ```C++
 int LED=5;
@@ -39,6 +46,9 @@ void loop() {
 }
 ```
 ##  Topic Three - LED breathing light
+### 功能-LED呼吸燈，每80ms改變亮度
+### ☆此功能需將LED接在有"~"符號的腳位
+#### ＊電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/LED%20breathing%20light%20GIF.gif)
 ```C++
 int value=255; int x=-15;
