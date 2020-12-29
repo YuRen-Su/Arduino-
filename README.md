@@ -475,11 +475,11 @@ void loop() {
   }
 }
 ```
-##  Topic Thirteen - DHT22 Temperature and Humidity Sensor + Buzzer
+##  Topic Fourteen - DHT22 Temperature and Humidity Sensor + Buzzer
 ### 功能-讀取DHT22所測量溫度🌡️、濕度💦，當溫度落在27°C~29°C時LED會亮起💡蜂鳴器也會發出警示聲
 ### ☆使用DHT Sensor Library程式庫
 #### 🔆電路圖＆功能如下：
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/DHT22%20Temperature%20and%20Humidity%20Sensor%20GIF.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/DHT22%20Temperature%20and%20Humidity%20Sensor%20%2B%20Buzzer.jpg)
 ```C++
 #include <Adafruit_Sensor.h>
 #include "DHT.h"
