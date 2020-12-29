@@ -475,4 +475,64 @@ void loop() {
   }
 }
 ```
+##  Topic Thirteen - DHT22 Temperature and Humidity Sensor + Buzzer
+### 功能-讀取DHT22所測量溫度🌡️、濕度💦，當溫度落在27°C~29°C時LED會亮起💡蜂鳴器也會發出警示聲
+### ☆使用DHT Sensor Library程式庫
+#### 🔆電路圖＆功能如下：
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/DHT22%20Temperature%20and%20Humidity%20Sensor%20GIF.gif)
+```C++
+#include <Adafruit_Sensor.h>
+#include "DHT.h"
+#include <DHT_U.h>
+#define DHTPIN 2
+#define DHTTYPE DHT22
+DHT_Unified dht(DHTPIN, DHTTYPE);
+uint32_t delayMS;
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+  pinMode(4,OUTPUT);
+  sensor_t sensor;
+  dht.temperature().getSensor(&sensor);
+  dht.humidity().getSensor(&sensor);
+  delayMS = sensor.min_delay / 1000;
+}
 
+void loop() {
+  delay(delayMS);
+  sensors_event_t event;
+  dht.temperature().getEvent(&event);
+  if (isnan(event.temperature)) {
+    Serial.println(F("Error reading temperature!"));
+  }
+  else {
+    Serial.print(F("Temperature: "));
+    Serial.print(event.temperature);
+    Serial.println(F("°C"));
+  }
+  if (event.temperature >= 27&& event.temperature <= 29){
+    digitalWrite(4,LOW);
+  }
+  else
+  {
+    digitalWrite(4,HIGH);
+    tone(5,1000);
+    delay(30);
+    noTone(5);
+    delay(30);
+    tone(5,1000);
+    delay(80);
+    noTone(5);
+  }
+  
+  dht.humidity().getEvent(&event);
+  if (isnan(event.relative_humidity)) {
+    Serial.println(F("Error reading humidity!"));
+  }
+  else {
+    Serial.print(F("Humidity: "));
+    Serial.print(event.relative_humidity);
+    Serial.println(F("%"));
+  }
+}
+```
