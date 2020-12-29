@@ -422,10 +422,10 @@ void loop() {
 }
 ```
 ##  Topic Thirteen - DHT22 Temperature and Humidity Sensor
-### 功能-使用LCD顯示可捲動的英文字母清單📃
-### ☆使用LiquidCrystal Library程式庫
+### 功能-讀取DHT22所測量溫度🌡️、濕度💦，當溫度落在27°C~29°C時LED會亮起💡
+### ☆使用DHT Sensor Library程式庫
 #### 🔆電路圖＆功能如下：
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Button%20scroll%20LCD%20text%20GIF.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/DHT22%20Temperature%20and%20Humidity%20Sensor%20GIF.gif)
 ``` C++
 #include <Adafruit_Sensor.h>
 #include "DHT.h"
