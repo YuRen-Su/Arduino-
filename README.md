@@ -421,3 +421,58 @@ void loop() {
    }
 }
 ```
+##  Topic Thirteen - DHT22 Temperature and Humidity Sensor
+### 功能-使用LCD顯示可捲動的英文字母清單📃
+### ☆使用LiquidCrystal Library程式庫
+#### 🔆電路圖＆功能如下：
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Button%20scroll%20LCD%20text%20GIF.gif)
+``` C++
+#include <Adafruit_Sensor.h>
+#include "DHT.h"
+#include <DHT_U.h>
+#define DHTPIN 2
+#define DHTTYPE DHT22
+DHT_Unified dht(DHTPIN, DHTTYPE);
+uint32_t delayMS;
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+  pinMode(4,OUTPUT);
+  sensor_t sensor;
+  dht.temperature().getSensor(&sensor);
+  dht.humidity().getSensor(&sensor);
+  delayMS = sensor.min_delay / 1000;
+}
+
+void loop() {
+  delay(delayMS);
+  sensors_event_t event;
+  dht.temperature().getEvent(&event);
+  if (isnan(event.temperature)) {
+    Serial.println(F("Error reading temperature!"));
+  }
+  else {
+    Serial.print(F("Temperature: "));
+    Serial.print(event.temperature);
+    Serial.println(F("°C"));
+  }
+  if (event.temperature >= 27&& event.temperature <= 29){
+    digitalWrite(4,LOW);
+  }
+  else
+  {
+    digitalWrite(4,HIGH);
+  }
+  
+  dht.humidity().getEvent(&event);
+  if (isnan(event.relative_humidity)) {
+    Serial.println(F("Error reading humidity!"));
+  }
+  else {
+    Serial.print(F("Humidity: "));
+    Serial.print(event.relative_humidity);
+    Serial.println(F("%"));
+  }
+}
+```
+
