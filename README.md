@@ -536,3 +536,125 @@ void loop() {
   }
 }
 ```
+##  Topic Fifteen - GY-61 Three-Axis Acceleration Angle Sensor
+### 功能-讀取GY-61所測量電壓數值⚡，當XY角度有所偏移將會亮起相對應的LED💡
+#### 🔆電路圖＆功能如下：
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/DHT22%20Temperature%20and%20Humidity%20Sensor%20%2B%20Buzzer.jpg)
+```C++
+int xpin = A1;                  //感測器 X_OUT 連接 Arduino pin A1
+int ypin = A2;                  //感測器 Y_OUT 連接 Arduino pin A2
+int zpin = A3;                  //感測器 Z_OUT 連接 Arduino pin A3
+int xb = 0;
+int xbb = 0;
+int yb = 0;
+int ybb = 0;
+int ix = 0, iy = 0;
+int x, y, z;
+boolean LED[6];
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  x = analogRead(xpin);  //讀 X 軸電壓值，存入整數 x
+  y = analogRead(ypin);  //讀 Y 軸電壓值，存入整數 y
+  z = analogRead(zpin);  //讀 Z 軸電壓值，存入整數 z
+  xb = x;
+  yb = y;
+}
+
+void loop()
+{
+  x = analogRead(xpin);  //讀 X 軸電壓值，存入整數 x
+  y = analogRead(ypin);  //讀 Y 軸電壓值，存入整數 y
+  z = analogRead(zpin);  //讀 Z 軸電壓值，存入整數 z
+  sdx();
+  sdy();
+  xbb = x;
+  ybb = y;
+  Serial.print(" x");         //在序列埠螢幕中印出X Y Z的文字
+  Serial.print("\t");
+  Serial.print(" y");
+  Serial.print("\t");
+  Serial.print(" z");
+  Serial.print("\n");
+  Serial.print(x);            //在序列埠螢幕中印出X Y Z的讀值
+  Serial.print("\t");
+  Serial.print(y);
+  Serial.print("\t");
+  Serial.print(z);
+  Serial.print("\n");
+  delay(40);
+  if (abs(x - xbb) <= 5)
+  {
+    ix++;
+  }
+  if (ix >= 40)
+  {
+    ix = 0;
+    xb = x;
+  }
+
+  if (abs(y - ybb) <= 5)
+  {
+    iy++;
+  }
+  if (iy >= 40)
+  {
+    iy = 0;
+    yb = y;
+  }
+  for (int i = 2; i < 6; i++) {
+    digitalWrite(i, LED[i]);
+  }
+}
+void sdx() {
+  if (abs(xb - x) > 10) {
+    if ((xb - x) / abs(xb - x) == 1) {
+      LED[2] = 0;
+    }
+    else
+    {
+      LED[2] = 1;
+    }
+    if ((xb - x) / abs(xb - x) == -1) {
+      LED[3] = 0;
+    }
+    else
+    {
+      LED[3] = 1;
+    }
+  }
+  else
+  {
+    LED[2] = 1;
+    LED[3] = 1;
+  }
+}
+
+void sdy() {
+  if (abs(yb - y) > 10) {
+    if ((yb - y) / abs(yb - y) == 1) {
+      LED[4] = 0;
+    }
+    else
+    {
+      LED[4] = 1;
+    }
+    if ((yb - y) / abs(yb - y) == -1) {
+      LED[5] = 0;
+    }
+    else
+    {
+      LED[5] = 1;
+    }
+  }
+  else
+  {
+    LED[4] = 1;
+    LED[5] = 1;
+  }
+}
+```
