@@ -538,15 +538,15 @@ void loop() {
 ```
 ##  Topic Fifteen - GY-61 Three-Axis Acceleration Angle Sensor
 ### 功能-讀取GY-61所測量電壓數值⚡，當XY角度有所偏移將會亮起相對應的LED💡
-###LED意識圖如下：
-###🔴X數值增加
-###⚪NC
-###🔴Y數值增加
-###⚪NC
-###⚪NC
-###🔴X數值減少
-###⚪NC
-###🔴Y數值減少
+### LED意識圖如下：
+### 🔴X數值增加
+### ⚪NC
+### 🔴Y數值增加
+### ⚪NC
+### ⚪NC
+### 🔴X數值減少
+### ⚪NC
+### 🔴Y數值減少
 #### 🔆電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/GY-61%20Three-Axis%20Acceleration%20Angle%20Sensor%20GIF.gif)
 ```C++
