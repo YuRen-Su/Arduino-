@@ -751,3 +751,76 @@ void loop() {
   }
 }
 ```
+##  Final Exam Topic 2 Button + LCD + Buzzer
+### 功能-使用LCD顯示出班級＆座號＆姓名📄,\n按下按鈕後顯示DHT22所偵測到的溫度與濕度,\n溫度低於20°C與高於23°C蜂鳴器則發出警報
+### ☆使用LiquidCrystal Library程式庫、DHT Sensor Library程式庫
+#### 🔆電路圖＆功能如下：
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Final_exam_topic_1%20GIF2.gif)
+```C++
+#include <LiquidCrystal.h>
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+#include <Adafruit_Sensor.h>
+#include "DHT.h"
+#include <DHT_U.h>
+#define DHTPIN 9
+#define DHTTYPE DHT22
+DHT_Unified dht(DHTPIN, DHTTYPE);
+uint32_t delayMS;
+int op = 0;
+void setup() {
+  lcd.begin(16, 2);
+  lcd.print("NO:25");
+  lcd.setCursor(0, 1);
+  lcd.print("Name:SuYuRen");
+  dht.begin();
+  pinMode(10, OUTPUT);
+  pinMode(7, INPUT);
+  sensor_t sensor;
+  dht.temperature().getSensor(&sensor);
+  dht.humidity().getSensor(&sensor);
+  delayMS = sensor.min_delay / 1000;
+  Serial.begin(9600);
+}
+
+void loop() {
+  while (digitalRead(7) == 0) {
+    while (digitalRead(7) == 0) ;
+    delay(40);
+    op = 1;
+    lcd.clear();
+  }
+  if (op == 1)
+  {
+    sensors_event_t event;
+    dht.temperature().getEvent(&event);
+    Serial.println(event.temperature);
+    String TP = "Temperature:";
+    TP += event.temperature;
+    TP += "°C";
+    lcd.begin(16, 2);
+    lcd.print(TP);
+    String HD = "Humidity:";
+    HD += event.relative_humidity;
+    HD += " %";
+    lcd.setCursor(0, 1);
+    lcd.print(HD);
+    delay(delayMS);
+
+    if (event.temperature <= 20) {
+      tone(10, 1000);
+      delay(50);
+      noTone(10);
+    }
+    else if (event.temperature >= 23){
+      tone(10, 1000);
+      delay(30);
+      noTone(10);
+      delay(30);
+      tone(10, 1000);
+      delay(80);
+      noTone(10);
+    }
+  }
+}
+```
