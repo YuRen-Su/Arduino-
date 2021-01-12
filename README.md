@@ -752,10 +752,12 @@ void loop() {
 }
 ```
 ##  Final Exam Topic 2 Button + LCD + Buzzer
-### 功能-使用LCD顯示出班級＆座號＆姓名📄,\n按下按鈕後顯示DHT22所偵測到的溫度與濕度,\n溫度低於20°C與高於23°C蜂鳴器則發出警報
+### 功能-使用LCD顯示出班級＆座號＆姓名📄,
+### 按下按鈕後顯示DHT22所偵測到的溫度🌡️與濕度💦,
+### 溫度低於20°C與高於23°C蜂鳴器則發出警報🚨📢。
 ### ☆使用LiquidCrystal Library程式庫、DHT Sensor Library程式庫
 #### 🔆電路圖＆功能如下：
-![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Final_exam_topic_1%20GIF2.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Final_exam_topic_2%20GIF.gif)
 ```C++
 #include <LiquidCrystal.h>
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
