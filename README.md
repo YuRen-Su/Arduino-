@@ -667,3 +667,87 @@ void sdy() {
   }
 }
 ```
+##  Final Exam Topic 1 Button + LED
+### 功能-使用按鈕切換LED💡亮燈模式
+### LED意識圖如下：
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Final_exam_topic_1GIF1.gif)
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Final_exam_topic_1%20GIF2.gif)
+```C++
+int ledRL[] = {2, 3, 4, 5, 6, 7, 8, 9};
+int ledO[] = {2, 4, 6, 8, 3, 5, 7, 9};
+int ledLR[] = {9, 8, 7, 6, 5, 4, 3, 2};
+int ledt1, ledt2;
+int Time, TimeN, mode = 3;
+void setup() {
+  for (int i =  2; i < 10; i++) {
+    pinMode(i, OUTPUT);
+    digitalWrite(i, HIGH);
+  }
+  pinMode (10, INPUT);
+
+}
+
+void loop() {
+  TimeN = millis();
+
+  while (digitalRead(10) == 0) {
+    while (digitalRead(10) == 0) {
+      delay(30);
+    }
+    if (mode < 3)
+    {
+      mode += 1;
+    }
+    else
+    {
+      mode = 0;
+    }
+    ledt1 = 0 ;
+    ledt2 = 0 ;
+  }
+  if (TimeN - Time >= 1000)
+  {
+    for (int i =  2; i < 10; i++) {
+      digitalWrite(i, HIGH);
+    }
+    switch  (mode) {
+      case 0:
+        if (ledt1 < 8)
+        {
+          digitalWrite(ledRL[ledt1], LOW);
+          ledt1 ++;
+        }
+        if (ledt1 == 8)
+        {
+          ledt1 = 0;
+        }
+        break;
+      case 1:
+        if (ledt2 < 8)
+        {
+          digitalWrite(ledO[ledt2], LOW);
+          ledt2 ++;
+        }
+        if (ledt2 == 8)
+        {
+          ledt2 = 0;
+        }
+        break;
+      case 2:
+        if (ledt2 < 8)
+        {
+          digitalWrite(ledLR[ledt2], LOW);
+          ledt2 ++;
+        }
+        if (ledt2 == 8)
+        {
+          ledt2 = 0;
+        }
+        break;
+      default:
+        break;
+    }
+    Time = millis();
+  }
+}
+```
