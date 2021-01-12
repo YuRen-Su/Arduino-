@@ -669,7 +669,7 @@ void sdy() {
 ```
 ##  Final Exam Topic 1 Button + LED
 ### 功能-使用按鈕切換LED💡亮燈模式
-### LED意識圖如下：
+#### 🔆電路圖＆功能如下：
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Final_exam_topic_1GIF1.gif)
 ![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Final_exam_topic_1%20GIF2.gif)
 ```C++
