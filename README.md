@@ -826,3 +826,42 @@ void loop() {
   }
 }
 ```
+##  Joystick control motor PWM
+### 功能-使用搖桿蘑菇頭控制風扇的PWM。
+### 向上推是逆時針轉，向下推是順時針轉。
+#### 🔆電路圖＆功能如下：
+![](https://github.com/YuRen-Su/Arduino-Classroom-learning-content/blob/main/Joystick%20control%20motor%20PWM%20GIF'.gif)
+```C++
+int VRX, VRY, SW ,x;
+void setup() {
+  Serial.begin(115200);
+  pinMode(2, OUTPUT); //IN3
+  pinMode(9, OUTPUT); //IN1
+  pinMode(10, OUTPUT); //IN2
+  digitalWrite(2, LOW);
+}
+
+void loop() {
+  char buf[100];
+  VRX = analogRead(A0);
+  VRY = analogRead(A1);
+  SW = analogRead(A2);
+  x = map(VRX, 0, 1023, -255, 255);
+  sprintf(buf, "VRx=%d, VRy=%d, SW=%d, X=%d", VRX, VRY, SW , x);
+  Serial.println(buf);
+  delay (100);
+  fr(x);
+
+}
+void fr(int f){
+  if(f > 0){
+    analogWrite(9,f);
+    analogWrite(10,LOW);
+  }
+  else
+  {
+    analogWrite(9,LOW);
+    analogWrite(10,abs(f));
+  }
+}
+```
